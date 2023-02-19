@@ -1,0 +1,598 @@
+@import url('https://fonts.cdnfonts.com/css/raleway-5?styles=27265');
+
+/* Navbar */
+
+.navbar {
+    position: absolute;
+    font-family: 'Raleway', sans-serif;
+    display: flex;
+    align-items: center;
+    height: 15vh;
+    top: 3vh;
+    left: 10vw;
+    right: 0;
+    z-index: 1;
+}
+
+.navbar .logo {
+    height: 8vh;
+}
+
+.navbar .nav {
+    list-style: none;
+    display: flex;
+}
+
+.navbar .nav li {
+    margin: 0 1vw;
+}
+
+.navbar .nav a {
+    color: #ff6329;
+    text-decoration: none;
+    font-size: 1vw;
+    font-weight: bold;
+}
+
+.navbar .icons {
+    margin-left: 44vw;
+}
+
+.navbar .icons img {
+    height: 3.5vh;
+    margin-left: 2vh;
+}
+
+
+/* SECTION 1 - Groceries on the Go. */
+
+.section1 {
+    position: relative;
+    justify-content: space-between;
+    font-family: 'Raleway', sans-serif;
+    height: 100vh;
+    background-color: #f3e1d1;
+    display: flex;
+    overflow: hidden;
+}
+
+.section1 .text {
+    width: 31vw;
+    margin-top: 30vh;
+    margin-left: 12vw;
+    font-weight: bold;
+}
+
+.section1 .text h1 {
+    font-size: 6vw;
+    text-align: center;
+    color: #ff6329;
+}
+
+.section1 .text p {
+    font-size: 0.8vw;
+    color: #000;
+    text-align: justify;
+    text-align-last: center;
+    margin: 2vh;
+}
+
+.section1 .text .buttons {
+    margin-top: 3vh;
+    left: 18vw;
+    display: flex;
+    justify-content: center;
+}
+
+.section1 .text .shop-now,
+.section1 .text .learn-more {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.9vw;
+    font-weight: bold;
+    padding: 1vh 1vw;
+    margin: 0 1vw;
+    border: solid black;
+    border-radius: 2vw;
+    color: #ff6329;
+    background-color: #f3e1d1;
+    cursor: pointer;
+}
+
+.section1 .text .shop-now:hover,
+.section1 .text .learn-more:hover {
+    color: #f3e1d1;
+    background-color: #ff6329;
+}
+
+.section1 .phone {
+    top: 20vh;
+    left: 12vw;
+    z-index: 1;
+    position: relative;
+}
+
+.section1 .phone img {
+    height: 65vh;
+}
+
+
+/* IMAGES SECTION 1 */
+
+.section1 .text .arrow {
+    display: flex;
+    position: absolute;
+    height: 3vh;
+    bottom: 14vh;
+    left: 26.7vw;
+}
+
+.section1 .strawberry0 .strawberry1 .pear0 {
+    display: flex;
+}
+
+.section1 .strawberry0 {
+    position: absolute;
+    top: -3vh;
+    right: 43vw;
+    height: 18vh;
+}
+
+.section1 .strawberry1 {
+    position: absolute;
+    top: 68vh;
+    left: -2vw;
+    height: 25vh;
+}
+
+.section1 .pear0 {
+    position: absolute;
+    top: 80vh;
+    left: 41vw;
+    height: 27vh;
+}
+
+.section1 .dots0,
+.dots1 {
+    display: flex;
+    position: absolute;
+}
+
+.section1 .dots0 {
+    top: 20vh;
+    left: 0;
+    height: 15vh;
+}
+
+.section1 .dots1 {
+    bottom: 10vh;
+    right: -1.5vw;
+    height: 18vh;
+}
+
+
+/* SECTION 2 - Locally Sourced Products.*/
+
+.section2 {
+    position: relative;
+    display: flex;
+    z-index: 1;
+    height: 80vh;
+    background-color: #ff6329;
+    border-top: solid;
+    border-bottom: solid;
+    font-family: 'Raleway', sans-serif;
+    overflow: hidden;
+}
+
+.section2 .text {
+    width: 51vw;
+    margin-top: 10vh;
+    margin-left: 24vw;
+    text-align: center;
+    color: #f3e1d1;
+}
+
+.section2 .text h1 {
+    font-size: 6vw;
+    font-weight: bold;
+}
+
+.section2 .text h4 {
+    font-size: 1.5vw;
+    color: black;
+    font-weight: bold;
+    margin: 1vw;
+}
+
+.section2 .text p {
+    font-size: 0.8vw;
+    font-weight: bold;
+    text-align: justify;
+    text-align-last: center;
+    margin-top: 5vh;
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+
+.section2 .text .learn-more {
+    display: flex;
+    position: relative;
+    font-size: 0.9vw;
+    font-weight: bold;
+    left: 20vw;
+    padding: 1vh 1vw;
+    margin: 3vh 1vw;
+    border: solid black;
+    border-radius: 2vw;
+    color: #ff6329;
+    background-color: #f3e1d1;
+    cursor: pointer;
+}
+
+.section2 .text .learn-more:hover {
+    color: #f3e1d1;
+    background-color: #ff6329;
+}
+
+
+/* IMAGES SECTION 2 */
+
+.section2 .dots0,
+.dots1 {
+    display: flex;
+    position: absolute;
+    height: 18vh;
+    z-index: 2;
+}
+
+.section2 .dots0 {
+    top: 10vh;
+    left: -2.4vw;
+}
+
+.section2 .dots1 {
+    bottom: 10vh;
+    right: -1.5vw;
+}
+
+.section2 .bananas,
+.mango {
+    display: flex;
+    position: absolute;
+    z-index: 2;
+}
+
+.section2 .bananas {
+    height: 23vh;
+    bottom: 10vh;
+    left: 3vw;
+}
+
+.section2 .mango {
+    height: 21vh;
+    top: 8vh;
+    right: 3vw;
+}
+
+
+/* SECTION 3 - Made Simple. */
+
+.section3 {
+    position: relative;
+    display: flex;
+    height: 120vh;
+    background-color: #f3e1d1;
+    border-bottom: solid;
+    font-family: 'Raleway', sans-serif;
+    overflow: hidden;
+}
+
+.section3 .text {
+    width: 40vw;
+    margin-top: 15vh;
+    margin-left: 30vw;
+    font-weight: bold;
+}
+
+.section3 .text h1 {
+    font-size: 6vw;
+    text-align: center;
+    color: #ff6329;
+}
+
+.section3 .text p {
+    font-size: 0.8vw;
+    color: #000;
+    text-align: justify;
+    text-align-last: center;
+    margin-top: 3vh;
+    margin-left: 2vw;
+    margin-right: 2vw;
+}
+
+.section3 .products {
+    display: flex;
+    position: absolute;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    justify-content: space-between;
+    height: 60vh;
+    width: 69vw;
+    bottom: 11vh;
+    left: 17vw;
+}
+
+
+/* PEAR */
+
+.section3 .products .product1 .pear {
+    height: 30vh;
+    padding: 5vh 5vw;
+}
+
+
+/* ANANAS */
+
+.section3 .products .product2 .ananas {
+    height: 30vh;
+    padding: 5vh 6.5vw;
+}
+
+
+/* LIME */
+
+.section3 .products .product3 .lime {
+    height: 25vh;
+    padding: 8vh 2.5vw;
+}
+
+
+/* PRODUCTS TEXT & BUTTONS */
+
+.section3 .products .product1 .pear,
+.section3 .products .product2 .ananas,
+.section3 .products .product3 .lime {
+    border: solid;
+    border-radius: 1vw;
+}
+
+.section3 .products .product1 .text1,
+.section3 .products .product2 .text2,
+.section3 .products .product3 .text3 {
+    position: absolute;
+    bottom: 11vh;
+    font-weight: bold;
+}
+
+.section3 .products .product1 .text1 h2,
+.section3 .products .product2 .text2 h2,
+.section3 .products .product3 .text3 h2 {
+    font-size: 1.2vw;
+    color: #000;
+}
+
+.section3 .products .product1 .text1 p,
+.section3 .products .product2 .text2 p,
+.section3 .products .product3 .text3 p {
+    font-size: 0.5vw;
+    color: #ff6329;
+    margin-top: 1vh;
+}
+
+.section3 .products .product1 .add-to-card,
+.products .product2 .add-to-card,
+.products .product3 .add-to-card {
+    position: absolute;
+    bottom: 11vh;
+    font-size: 0.9vw;
+    font-weight: bold;
+    padding: 1vh 1vw;
+    margin: 0 1vw;
+    border: solid black;
+    border-radius: 2vw;
+    color: #ff6329;
+    background-color: #f3e1d1;
+    align-self: right;
+    cursor: pointer;
+}
+
+.section3 .products .product1 .add-to-card:hover,
+.product2 .add-to-card:hover,
+.product3 .add-to-card:hover {
+    color: #f3e1d1;
+    background-color: #ff6329;
+}
+
+.section3 .product1 .add-to-card {
+    left: 10vw;
+}
+
+.section3 .products .product2 .add-to-card {
+    left: 34.5vw;
+}
+
+.section3 .products .product3 .add-to-card {
+    right: -1vw;
+}
+
+
+/* IMAGES SECTION 3 */
+
+.section3 .dots0,
+.section3 .dots1 {
+    display: flex;
+    position: absolute;
+    height: 18vh;
+}
+
+.section3 .dots0 {
+    bottom: 10vh;
+    left: -1.5vw;
+    rotate: -10deg;
+}
+
+.section3 .dots1 {
+    top: 15vh;
+    right: -1vw;
+}
+
+.section3 .products .arrow0,
+.section3 .products .arrow1 {
+    bottom: 0vh;
+    height: 3vh;
+    position: absolute;
+}
+
+.section3 .products .arrow0 {
+    left: 32vw;
+    rotate: 90deg;
+}
+
+.section3 .products .arrow1 {
+    right: 32vw;
+    rotate: -90deg;
+}
+
+
+/* SECTION 4 - FAQ.*/
+
+.section4 {
+    position: relative;
+    font-family: 'Raleway', sans-serif;
+    height: 90vh;
+    background-color: #ff6329;
+    overflow: hidden;
+    font-weight: bold;
+}
+
+.section4 .text {
+    position: absolute;
+    width: 40vw;
+    top: 12vh;
+    left: 10vw;
+    color: #f3e1d1;
+}
+
+.section4 .text h1 {
+    font-size: 6vw;
+    text-align: left;
+    margin-bottom: 5vh;
+}
+
+.section4 .text .qa-list div {
+    font-size: 3vh;
+    border-bottom: 0.4vh solid #f3e1d1;
+    margin-bottom: 3vh;
+    padding-bottom: 2vh;
+    position: relative;
+}
+
+.section4 .text .qa-list div::after {
+    content: "+";
+    position: absolute;
+    right: 0;
+    bottom: 0.5vh;
+    font-size: 6vh;
+    font-weight: 100;
+}
+
+
+/* IMAGES SECTION 4 */
+
+.section4 .card {
+    top: 20vh;
+    left: 60vw;
+    z-index: 0;
+    position: relative;
+    height: 40vh;
+}
+
+.section4 .dots0 {
+    display: flex;
+    position: absolute;
+    height: 18vh;
+}
+
+.section4 .dots0 {
+    top: 10vh;
+    left: -2vw;
+    height: 17vh;
+}
+
+.section4 .dots1 {
+    bottom: 25vh;
+    right: -2vw;
+    height: 18vh;
+}
+
+
+/* ZIG ZAGS */
+
+.section1 .zigzag1 h3 {
+    writing-mode: vertical-rl;
+    color: #f3e1d1;
+    font-size: 1.2vw;
+    font-weight: bold;
+    top: 32vh;
+    left: 15vw;
+    position: relative;
+}
+
+.section1 .zigzag1 {
+    width: 30vw;
+    background: #ff6329;
+    position: relative;
+}
+
+.section4 .zigzag2 {
+    position: absolute;
+    height: 12vh;
+    background-color: #ffca4d;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-bottom: solid #000;
+    z-index: 1;
+}
+
+.section1 .zigzag1:before,
+.section1 .zigzag1:after,
+.section4 .zigzag2:before,
+.section4 .zigzag2:after {
+    content: " ";
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+}
+
+.section1 .zigzag1:before {
+    background: linear-gradient(315deg, black 2.3vh, transparent 0), linear-gradient(225deg, black 2.3vh, transparent 0);
+    background-repeat: repeat-y;
+    background-size: 4vh 4vh;
+    top: 0;
+    right: 2vw;
+}
+
+.section1 .zigzag1:after {
+    background: linear-gradient(315deg, #ff6329 2.3vh, transparent 0), linear-gradient(225deg, #ff6329 2.3vh, transparent 0);
+    background-repeat: repeat-y;
+    background-size: 4vh 4vh;
+    top: 0;
+    right: 1.7vw;
+}
+
+.section4 .zigzag2:before {
+    background: linear-gradient(-45deg, #000 2.3vh, transparent 0), linear-gradient(45deg, #000 2.3vh, transparent 0);
+    background-repeat: repeat-x;
+    background-size: 4vh 4vh;
+    top: -3vh;
+    right: 0;
+}
+
+.section4 .zigzag2:after {
+    background: linear-gradient(-45deg, #ffca4d 2.3vh, transparent 0), linear-gradient(45deg, #ffca4d 2.3vh, transparent 0);
+    background-repeat: repeat-x;
+    background-size: 4vh 4vh;
+    top: -2.5vh;
+    right: 0;
+}
