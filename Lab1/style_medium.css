@@ -1,0 +1,278 @@
+@import url('https://fonts.cdnfonts.com/css/raleway-5?styles=27265');
+
+/* Navbar */
+
+@media only screen and (max-width: 812px) {
+    .navbar {
+        left: 5vw;
+    }
+    .navbar .logo {
+        height: 8vh;
+    }
+    .navbar .icons {
+        margin-left: 8vw;
+    }
+    .navbar .icons img {
+        height: 3vh;
+        margin-left: 2;
+    }
+    .navbar .nav a {
+        font-size: 2.5vw;
+    }
+    .navbar .nav li {
+        margin: 0 2vw;
+    }
+}
+
+
+/* SECTION 1 - Groceries on the Go. */
+
+@media screen and (max-width: 812px) {
+    .section1 .phone {
+        display: none;
+    }
+    .section1 .text {
+        width: 60vw;
+        margin-left: 7vw;
+    }
+    .section1 .text h1 {
+        font-size: 11vw;
+    }
+    .section1 .text p {
+        font-size: 2.1vw;
+    }
+    .section1 .text .buttons {
+        margin-top: 2vh;
+    }
+    .section1 .text .shop-now,
+    .section1 .text .learn-more,
+    .section2 .text .learn-more {
+        font-size: 2vw;
+        padding: 1vh 2vw;
+        border: solid 0.2vw black;
+        margin: 0 2vw;
+        border-radius: 3vw;
+    }
+    .section1 .text .shop-now:active,
+    .section1 .text .learn-more:active,
+    .section2 .text .learn-more:active,
+    .section3 .products .product1 .add-to-card:active,
+    .section3 .product2 .add-to-card:active,
+    .section3 .product3 .add-to-card:active {
+        color: #f3e1d1;
+        background-color: #ff6329;
+    }
+}
+
+
+/* IMAGES SECTION 1 */
+
+@media screen and (max-width: 812px) {
+    .section1 .text .arrow {
+        bottom: 30vh;
+        left: 35vw;
+    }
+    .section1 .strawberry0 {
+        height: 10vh;
+    }
+    .section1 .strawberry1 {
+        height: 15vh;
+    }
+    .section1 .pear0 {
+        height: 20vh;
+        top: 85vh;
+        left: 35vw;
+    }
+    .section1 .dots0,
+    .dots1 {
+        height: 11vh;
+    }
+}
+
+
+/* SECTION 2 - Locally Sourced Products.*/
+
+@media screen and (max-width: 812px) {
+    .section2 .text {
+        width: 80vw;
+        margin-left: 10vw;
+        margin-top: 23vh;
+    }
+    .section2 .text h1 {
+        font-size: 10vw;
+    }
+    .section2 .text h4 {
+        font-size: 3vw;
+    }
+    .section2 .text p {
+        font-size: 2.1vw;
+        margin-top: 2vh;
+    }
+    .section2 .text .learn-more {
+        margin-top: 2vh;
+        left: 30vw;
+    }
+}
+
+
+/* IMAGES SECTION 2 */
+
+@media screen and (max-width: 812px) {
+    .section2 .dots0,
+    .section2 .dots1 {
+        height: 12vh;
+    }
+    .section2 .mango {
+        height: 18vh;
+        top: 5vh;
+        right: 2vw;
+    }
+    .section2 .bananas {
+        height: 18vh;
+        bottom: 6vh;
+        left: 5vw;
+    }
+}
+
+
+/* SECTION 3 - Made Simple. */
+
+@media screen and (max-width: 812px) {
+    .section3 {
+        height: 70vh;
+    }
+    .section3 .text {
+        width: 80vw;
+        margin-left: 10vw;
+        margin-top: 10vh;
+    }
+    .section3 .text h1 {
+        font-size: 12vw;
+    }
+    .section3 .text p {
+        font-size: 2.1vw;
+    }
+    .section3 .products {
+        width: 80vw;
+        height: 32vh;
+        left: 10vw;
+        top: 32vh;
+    }
+    .section3 .products .product1 .pear {
+        height: 16vh;
+        padding: 1vh 5vw;
+    }
+    .section3 .products .product2 .ananas {
+        height: 16vh;
+        padding: 1vh 7.5vw;
+    }
+    .section3 .products .product3 .lime {
+        height: 12vh;
+        padding: 3vh 3vw;
+    }
+    /* PRODUCTS TEXT & BUTTONS */
+    .section3 .products .product1 .text1,
+    .section3 .products .product2 .text2,
+    .section3 .products .product3 .text3 {
+        position: absolute;
+        font-weight: bold;
+        bottom: 8vh;
+        margin-left: 2.5vw;
+    }
+    .section3 .products .product1 .text1 h2,
+    .section3 .products .product2 .text2 h2,
+    .section3 .products .product3 .text3 h2 {
+        font-size: 3vw;
+    }
+    .section3 .products .product1 .text1 p,
+    .section3 .products .product2 .text2 p,
+    .section3 .products .product3 .text3 p {
+        font-size: 2vw;
+        color: #ff6329;
+        margin-left: 6.5vw;
+        margin-top: 0.5vh;
+    }
+    .section3 .products .product1 .add-to-card,
+    .products .product2 .add-to-card,
+    .products .product3 .add-to-card {
+        font-size: 2vw;
+        bottom: 4vh;
+        padding: 0.5vh 1vw;
+        border: solid black;
+    }
+    .section3 .product1 .add-to-card {
+        left: 3.5vw;
+    }
+    .section3 .products .product2 .add-to-card {
+        left: 30vw;
+    }
+    .section3 .products .product3 .add-to-card {
+        right: 3.5vw;
+    }
+    /*DOTS SECTION 3 */
+    .section3 .dots0,
+    .section3 .dots1 {
+        height: 10vh;
+    }
+    .section3 .dots0 {
+        bottom: 3vh;
+    }
+    .section3 .dots1 {
+        top: 4vh;
+    }
+}
+
+
+/* SECTION 4 - FAQ.*/
+
+@media screen and (max-width: 812px) {
+    .section4 {
+        height: 75vh;
+    }
+    .section4 .text {
+        width: 80vw;
+        z-index: 2;
+    }
+    .section4 .text h1 {
+        font-size: 8vw;
+        margin-bottom: 3vh;
+    }
+    .section4 .text .qa-list div {
+        font-size: 2vh;
+    }
+    .section4 .text .qa-list div::after {
+        bottom: 0.2vh;
+        font-size: 5vh;
+    }
+    /* IMAGES SECTION 4 */
+    .section4 .card {
+        opacity: 30%;
+        left: 55vw;
+    }
+    .section4 .dots0,
+    .section4 .dots1 {
+        height: 11vh;
+    }
+    .section4 .dots0 {
+        top: 5vh;
+    }
+}
+
+
+/* ZIG ZAGS */
+
+@media only screen and (max-width: 812px) {
+    .section1 .zigzag1 h3 {
+        font-size: 3vh;
+        top: 5vh;
+        left: 15vw;
+    }
+    .section1 .zigzag1 {
+        width: 25vw;
+        padding-top: 12vh;
+        padding-bottom: 4vh;
+    }
+    .section4 .zigzag2 {
+        height: 15vh;
+    }
+}

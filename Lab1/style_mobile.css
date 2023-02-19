@@ -1,0 +1,324 @@
+@import url('https://fonts.cdnfonts.com/css/raleway-5?styles=27265');
+
+/* Navbar */
+
+@media only screen and (max-width: 429px) {
+    .navbar {
+        top: 0;
+        left: 2vw;
+    }
+    .navbar .logo {
+        height: 5vh;
+    }
+    .navbar .icons {
+        margin-left: 8vw;
+    }
+    .navbar .icons img {
+        height: 2.5vh;
+        margin-left: 1vw;
+    }
+    .navbar .nav a {
+        font-size: 3vw;
+    }
+    .navbar .nav li {
+        margin: 0 2vw;
+    }
+}
+
+
+/* SECTION 1 - Groceries on the Go. */
+
+@media screen and (max-width: 429px) {
+    .section1 {
+        height: 60vh;
+    }
+    .section1 .phone {
+        display: none;
+    }
+    .section1 .text {
+        width: 70vw;
+        margin-top: 20vh;
+        margin-left: 2vw;
+        z-index: 1;
+    }
+    .section1 .text h1 {
+        font-size: 13vw;
+    }
+    .section1 .text p {
+        font-size: 2.5vw;
+        margin: 1vh;
+    }
+    .section1 .text .buttons {
+        margin-top: 2vh;
+    }
+    .section1 .text .shop-now,
+    .section1 .text .learn-more,
+    .section2 .text .learn-more {
+        font-size: 2.5vw;
+        padding: 0.5vh 2vw;
+        border: solid 0.5vw black;
+        margin: 0 2vw;
+        border-radius: 3vw;
+    }
+    .section1 .text .shop-now:active,
+    .section1 .text .learn-more:active,
+    .section2 .text .learn-more:active,
+    .section3 .products .product1 .add-to-card:active,
+    .section3 .product2 .add-to-card:active,
+    .section3 .product3 .add-to-card:active {
+        color: #f3e1d1;
+        background-color: #ff6329;
+    }
+}
+
+
+/* IMAGES SECTION 1 */
+
+@media screen and (max-width: 429px) {
+    .section1 .text .arrow {
+        height: 2vh;
+        bottom: 12vh;
+        left: 35vw;
+    }
+    .section1 .strawberry0 {
+        height: 7vh;
+    }
+    .section1 .strawberry1 {
+        top: 40vh;
+        height: 9vh;
+    }
+    .section1 .pear0 {
+        height: 12vh;
+        top: 52vh;
+        left: 37vw;
+    }
+    .section1 .dots0,
+    .section1 .dots1 {
+        height: 5vh;
+    }
+    .section1 .dots0 {
+        top: 12vh;
+    }
+    .section1 .dots1 {
+        bottom: 2vh;
+    }
+}
+
+
+/* SECTION 2 - Locally Sourced Products.*/
+
+@media screen and (max-width: 429px) {
+    .section2 {
+        height: 50vh;
+    }
+    .section2 .text {
+        width: 90vw;
+        margin-left: 5vw;
+        margin-top: 14vh;
+    }
+    .section2 .text h1 {
+        font-size: 11vw;
+    }
+    .section2 .text h4 {
+        font-size: 5vw;
+    }
+    .section2 .text p {
+        font-size: 2.5vw;
+        margin-top: 1vh;
+    }
+    .section2 .text .learn-more {
+        margin-top: 2vh;
+        left: 30vw;
+    }
+}
+
+
+/* IMAGES SECTION 2 */
+
+@media screen and (max-width: 429px) {
+    .section2 .dots0,
+    .section2 .dots1 {
+        height: 10vh;
+    }
+    .section2 .dots0 {
+        top: 5vh;
+    }
+    .section2 .dots1 {
+        bottom: 2vh;
+    }
+    .section2 .mango {
+        height: 11vh;
+        top: 2vh;
+        right: -5vw;
+    }
+    .section2 .bananas {
+        height: 12vh;
+        bottom: 2vh;
+        left: 5vw;
+    }
+}
+
+
+/* SECTION 3 - Made Simple. */
+
+@media screen and (max-width: 429px) {
+    .section3 {
+        height: 55vh;
+    }
+    .section3 .text {
+        width: 90vw;
+        margin-left: 5vw;
+        margin-top: 8vh;
+    }
+    .section3 .text h1 {
+        font-size: 13vw;
+    }
+    .section3 .text p {
+        font-size: 2.5vw;
+        margin-top: 1vh;
+        margin-left: 7vw;
+        margin-right: 7vw;
+    }
+    .section3 .products {
+        width: 90vw;
+        height: 24vh;
+        left: 5vw;
+        top: 23vh;
+    }
+    .section3 .products .product1 .pear {
+        height: 11vh;
+        padding: 1vh 5.5vw;
+    }
+    .section3 .products .product2 .ananas {
+        top: 20vh;
+        height: 11vh;
+        padding: 1vh 8.5vw;
+    }
+    .section3 .products .product3 .lime {
+        height: 8vh;
+        padding: 2.5vh 2.5vw;
+    }
+    /* PRODUCTS TEXT & BUTTONS */
+    .section3 .products .product1 .text1,
+    .section3 .products .product2 .text2,
+    .section3 .products .product3 .text3 {
+        position: absolute;
+        font-weight: bold;
+        bottom: 6.5vh;
+        margin-left: 2.5vw;
+    }
+    .section3 .products .product1 .text1 h2,
+    .section3 .products .product2 .text2 h2,
+    .section3 .products .product3 .text3 h2 {
+        font-size: 3vw;
+    }
+    .section3 .products .product1 .text1 p,
+    .section3 .products .product2 .text2 p,
+    .section3 .products .product3 .text3 p {
+        font-size: 2vw;
+        color: #ff6329;
+        margin-left: 8vw;
+        margin-top: 0.5vh;
+    }
+    .section3 .products .product1 .add-to-card,
+    .products .product2 .add-to-card,
+    .products .product3 .add-to-card {
+        font-size: 2vw;
+        bottom: 3vh;
+        padding: 0.5vh 1vw;
+        border: solid 0.5vw black;
+    }
+    .section3 .product1 .add-to-card {
+        left: 4vw;
+    }
+    .section3 .products .product2 .add-to-card {
+        left: 35vw;
+    }
+    .section3 .products .product3 .add-to-card {
+        right: 3vw;
+    }
+    /*DOTS SECTION 3 */
+    .section3 .dots0,
+    .section3 .dots1 {
+        height: 8vh;
+    }
+    .section3 .dots0 {
+        bottom: 3vh;
+    }
+    .section3 .dots1 {
+        top: 2vh;
+    }
+    .section3 .products .arrow0,
+    .section3 .products .arrow1 {
+        height: 2vh;
+    }
+    .section3 .products .arrow0 {
+        left: 35vw;
+    }
+    .section3 .products .arrow1 {
+        right: 35vw;
+    }
+}
+
+
+/* SECTION 4 - FAQ.*/
+
+@media screen and (max-width: 429px) {
+    .section4 {
+        height: 70vh;
+    }
+    .section4 .text {
+        width: 90vw;
+        z-index: 2;
+        top: 10vh;
+        left: 5vw;
+    }
+    .section4 .text h1 {
+        font-size: 11vw;
+        margin-bottom: 3vh;
+    }
+    .section4 .text .qa-list div {
+        font-size: 1.7vh;
+    }
+    .section4 .text .qa-list div::after {
+        bottom: 0.2vh;
+        font-size: 5vh;
+    }
+    /* IMAGES SECTION 4 */
+    .section4 .card {
+        opacity: 20%;
+        left: 40vw;
+        top: 15vh;
+        height: 30vh;
+    }
+    .section4 .dots0,
+    .section4 .dots1 {
+        height: 8vh;
+    }
+    .section4 .dots0 {
+        top: 1vh;
+        left: -5vw;
+    }
+    .section4 .dots1 {
+        bottom: 14vh;
+    }
+}
+
+
+/* ZIG ZAGS */
+
+@media only screen and (max-width: 429px) {
+    .section1 .zigzag1 h3 {
+        font-size: 2vh;
+        top: 4vh;
+        left: 9vw;
+    }
+    .section1 .zigzag1 {
+        width: 20vw;
+        padding-top: 12vh;
+        padding-bottom: 4vh;
+    }
+    .section4 .zigzag2 {
+        height: 10vh;
+    }
+}

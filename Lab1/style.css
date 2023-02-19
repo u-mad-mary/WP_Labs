@@ -85,7 +85,8 @@
 }
 
 .section1 .text .shop-now,
-.section1 .text .learn-more {
+.section1 .text .learn-more,
+.section2 .text .learn-more {
     font-family: 'Raleway', sans-serif;
     font-size: 0.9vw;
     font-weight: bold;
@@ -99,7 +100,8 @@
 }
 
 .section1 .text .shop-now:hover,
-.section1 .text .learn-more:hover {
+.section1 .text .learn-more:hover,
+.section2 .text .learn-more:hover {
     color: #f3e1d1;
     background-color: #ff6329;
 }
@@ -155,18 +157,17 @@
 .dots1 {
     display: flex;
     position: absolute;
+    height: 16vh;
 }
 
 .section1 .dots0 {
     top: 20vh;
     left: 0;
-    height: 15vh;
 }
 
 .section1 .dots1 {
     bottom: 10vh;
     right: -1.5vw;
-    height: 18vh;
 }
 
 
@@ -215,30 +216,15 @@
 }
 
 .section2 .text .learn-more {
-    display: flex;
-    position: relative;
-    font-size: 0.9vw;
-    font-weight: bold;
+    margin-top: 3vh;
     left: 20vw;
-    padding: 1vh 1vw;
-    margin: 3vh 1vw;
-    border: solid black;
-    border-radius: 2vw;
-    color: #ff6329;
-    background-color: #f3e1d1;
-    cursor: pointer;
-}
-
-.section2 .text .learn-more:hover {
-    color: #f3e1d1;
-    background-color: #ff6329;
 }
 
 
 /* IMAGES SECTION 2 */
 
 .section2 .dots0,
-.dots1 {
+.section2 .dots1 {
     display: flex;
     position: absolute;
     height: 18vh;
@@ -343,7 +329,7 @@
 
 .section3 .products .product3 .lime {
     height: 25vh;
-    padding: 8vh 2.5vw;
+    padding: 7.4vh 2.5vw;
 }
 
 
@@ -392,7 +378,6 @@
     border-radius: 2vw;
     color: #ff6329;
     background-color: #f3e1d1;
-    align-self: right;
     cursor: pointer;
 }
 
@@ -502,12 +487,12 @@
 .section4 .card {
     top: 20vh;
     left: 60vw;
-    z-index: 0;
     position: relative;
     height: 40vh;
 }
 
-.section4 .dots0 {
+.section4 .dots0,
+.section4 .dots1 {
     display: flex;
     position: absolute;
     height: 18vh;
@@ -516,13 +501,11 @@
 .section4 .dots0 {
     top: 10vh;
     left: -2vw;
-    height: 17vh;
 }
 
 .section4 .dots1 {
     bottom: 25vh;
     right: -2vw;
-    height: 18vh;
 }
 
 
@@ -570,7 +553,7 @@
     background-repeat: repeat-y;
     background-size: 4vh 4vh;
     top: 0;
-    right: 2vw;
+    right: 3vh;
 }
 
 .section1 .zigzag1:after {
@@ -578,7 +561,7 @@
     background-repeat: repeat-y;
     background-size: 4vh 4vh;
     top: 0;
-    right: 1.7vw;
+    right: 2.6vh;
 }
 
 .section4 .zigzag2:before {
