@@ -9,7 +9,6 @@ if (savedTasks) {
     tasks = JSON.parse(savedTasks);
 }
 
-// Function to save the tasks to local storage
 function saveTasks() {
     localStorage.setItem('tasks', JSON.stringify(tasks));
 }
@@ -19,23 +18,23 @@ const addTaskButton = document.getElementById('add-task');
 const descriptionText = document.getElementById('description-text');
 const taskList = document.getElementById('task-list');
 const doneTaskList = document.getElementById('done-task-list');
+const searchInput = document.getElementById('search');
 
-function renderTasks() {
+function renderTasks(filteredTasks = tasks) {
 
     taskList.innerHTML = '';
     doneTaskList.innerHTML = '';
 
     // Loop through the tasks and create a new list item for each one
-    for (let i = 0; i < tasks.length; i++) {
-        const task = tasks[i];
+    for (let i = 0; i < filteredTasks.length; i++) {
+        const task = filteredTasks[i];
 
         const taskItem = document.createElement('li');
         taskItem.classList.add('task-item');
-        taskItem.setAttribute('draggable', 'true');
+        taskItem.draggable = true;
 
-        // Add dragstart event listener to task item
         taskItem.addEventListener('dragstart', function(e) {
-            e.dataTransfer.setData('text/plain', i); // Save the task index as data
+            e.dataTransfer.setData('text/plain', i);
         });
 
         const taskText = document.createElement('div');
@@ -52,14 +51,14 @@ function renderTasks() {
 
         const deleteButton = document.createElement('button');
         deleteButton.classList.add('delete-button');
-        deleteButton.innerText = 'x';
+        deleteButton.innerText = '\u2715';
         deleteButton.addEventListener('click', function() {
             deleteTask(i);
         });
 
         const editButton = document.createElement('button');
         editButton.classList.add('edit-button');
-        editButton.innerText = 'Edit';
+        editButton.innerText = '\u270E';
         editButton.addEventListener('click', function() {
             editTask(i);
         });
@@ -80,45 +79,40 @@ function renderTasks() {
 
         if (task.done) {
             taskItem.classList.add('done');
-
-            doneTaskList.addEventListener('dragover', function(e) {
-                e.preventDefault();
-                doneTaskList.classList.add('drag-over');
-            });
-
-            doneTaskList.addEventListener('dragleave', function() {
-                doneTaskList.classList.remove('drag-over');
-            });
-
+            doneTaskList.appendChild(taskItem);
             doneTaskList.addEventListener('drop', function(e) {
                 e.preventDefault();
                 doneTaskList.classList.remove('drag-over');
                 const index = e.dataTransfer.getData('text/plain');
                 markTaskDone(index);
             });
-
-            doneTaskList.appendChild(taskItem);
         } else {
             taskList.appendChild(taskItem);
-
-            taskList.addEventListener('dragover', function(e) {
-                e.preventDefault();
-                taskList.classList.add('drag-over');
-            });
-
-            taskList.addEventListener('dragleave', function() {
-                taskList.classList.remove('drag-over');
-            });
-
             taskList.addEventListener('drop', function(e) {
                 e.preventDefault();
                 taskList.classList.remove('drag-over');
                 const index = e.dataTransfer.getData('text/plain');
                 markTaskUndone(index);
             });
-
-            taskList.appendChild(taskItem);
         }
+
+        taskList.addEventListener('dragover', function(e) {
+            e.preventDefault();
+            taskList.classList.add('drag-over');
+        });
+
+        taskList.addEventListener('dragleave', function() {
+            taskList.classList.remove('drag-over');
+        });
+
+        doneTaskList.addEventListener('dragover', function(e) {
+            e.preventDefault();
+            doneTaskList.classList.add('drag-over');
+        });
+
+        doneTaskList.addEventListener('dragleave', function() {
+            doneTaskList.classList.remove('drag-over');
+        });
 
     }
 
@@ -137,8 +131,8 @@ function deleteTask(index) {
 
 function editTask(index) {
     const task = tasks[index];
-    const inputs = prompt('Enter task name, task description (optional), and new deadline (optional), separated by commas', `${task.text},${task.description},${task.deadline}`);
-    const inputArray = inputs.split(',');
+    const inputs = prompt('Enter task name, task description (optional), and new deadline (optional), separated by semi-colons', `${task.text};${task.description};${task.deadline}`);
+    const inputArray = inputs.split(';');
 
     const newTask = inputArray[0];
     const newDescription = inputArray[1];
@@ -182,11 +176,54 @@ addTaskButton.addEventListener('click', function() {
     }
 });
 
+// Function for filtering tasks
+function filterTasks() {
+    const searchKeyword = searchInput.value.trim().toLowerCase();
+    const filteredTasks = tasks.filter(function(task) {
+        return task.text.toLowerCase().includes(searchKeyword);
+    });
+    renderTasks(filteredTasks);
+}
+
+searchInput.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') {
+        searchInput.value = '';
+        renderTasks();
+    }
+});
+
+searchInput.addEventListener('input', filterTasks);
+
+
 newTaskInput.addEventListener('keypress', function(e) {
     if (e.key === 'Enter') {
         addTaskButton.click();
     }
 });
+
+function updateImage() {
+    var imageBG = document.querySelector("body"),
+        file = document.querySelector("#imgUpload").files[0],
+        reader = new FileReader();
+
+    reader.onloadend = function() {
+        imageBG.style.backgroundImage = "url(" + reader.result + ")";
+        localStorage.setItem("backgroundImage", reader.result);
+    };
+
+    if (file) reader.readAsDataURL(file);
+    else {
+        imageBG.style.backgroundImage = "";
+        localStorage.removeItem("backgroundImage");
+    }
+}
+
+window.onload = function() {
+    var savedImage = localStorage.getItem("backgroundImage");
+    if (savedImage) {
+        document.querySelector("body").style.backgroundImage = "url(" + savedImage + ")";
+    }
+};
 
 // Function to check for tasks every 30 minutes and send notifications
 function checkTasks() {
