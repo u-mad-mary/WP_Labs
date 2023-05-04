@@ -13,6 +13,7 @@
     "@jridgewell/sourcemap-codec": "^1.4.15",
     "pinia": "^2.0.32",
     "vue": "^3.2.47",
+    "vue-howler": "^0.7.0",
     "vue-router": "^4.1.6"
   },
   "devDependencies": {
