@@ -14,10 +14,9 @@
       </form>
     </div>
   </template>
-  
+
   <script>
   import { createUser } from '../router/index'
-  
   export default {
     name: 'UserView',
     data() {
@@ -28,6 +27,7 @@
         user: {}
       }
     },
+
     created() {
       const userId = localStorage.getItem('userId')
       if (userId) {
@@ -38,35 +38,34 @@
         }
       }
     },
-    methods: {
 
+    methods: {
       async registerUser() {
-  try {
-    const response = await createUser({
-      data: {
+      try {
+        const response = await createUser({
+        data: {
+          name: this.name,
+          surname: this.surname
+        }
+      })
+      
+      localStorage.setItem('userId', response.id) // Save user ID in local storage
+      localStorage.setItem('userName', this.name) // Save user name in local storage
+      localStorage.setItem('userSurname', this.surname) // Save user surname in local storage
+      alert(`User registered with ID: ${response.id}`)
+      this.isLoggedIn = true
+      this.user = {
         name: this.name,
         surname: this.surname
       }
-    })
-    localStorage.setItem('userId', response.id) // Save user ID in local storage
-    localStorage.setItem('userName', this.name) // Save user name in local storage
-    localStorage.setItem('userSurname', this.surname) // Save user surname in local storage
-    alert(`User registered with ID: ${response.id}`)
-    this.isLoggedIn = true
-    this.user = {
-      name: this.name,
-      surname: this.surname
+      this.$emit('user-registered', { // emit 'user-registered' event with user's name and surname
+        name: this.name,
+        surname: this.surname
+      })
+      this.$router.push({ name: 'quizzes' }) // redirect to quizzes view
+    } catch (error) {
+      alert(`Error registering user: ${error.message}`)
     }
-    this.$emit('user-registered', { // emit 'user-registered' event with user's name and surname
-      name: this.name,
-      surname: this.surname
-    })
-    this.$router.push({ name: 'quizzes' }) // redirect to quizzes view
-  } catch (error) {
-    alert(`Error registering user: ${error.message}`)
-  }
-}
-    }
-  }
-  </script>
+}}}
+</script>
   

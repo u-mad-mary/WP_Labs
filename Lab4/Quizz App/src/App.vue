@@ -6,13 +6,13 @@
   <div v-else class = "user-info">
       <p>Please register to access the quizzes.</p>
   </div>
-    <div class="container" id="start">
+    <div class="container">
       <audio ref="audio" loop>
-      <source src="@/assets/lofi.mp3" type="audio/mpeg">
+      <source src="./assets/lofi.mp3" type="audio/mpeg">
     </audio>
     <header class="head">
       <h1>Welcome to the Quiz App!</h1>
-      <button class="button" id="music" @click="startAudio">{{ isPlaying ? 'Music Off' : 'Music On' }}</button>
+      <button class="button" id="music" @click="startAudio">{{ isPlaying ? 'Turn Music Off' : 'Turn Music On' }}</button>
     </header>
     <nav class ="nav-bar">
       <router-link to="/">Home</router-link>
@@ -25,9 +25,7 @@
 
 <script>
 import { deleteUser } from './router/index';
-
 const userId = localStorage.getItem('userId')
-
 export default {
   name: 'App',
   data() {
@@ -38,7 +36,6 @@ export default {
       audioContext: null
     }
   },
-
   created(){
     const userName = localStorage.getItem('userName');
     const userSurname = localStorage.getItem('userSurname');
@@ -48,26 +45,20 @@ export default {
       this.user.surname = userSurname;
     }
   },
-
   methods: {
-     updateUser(userInfo) {
+    updateUser(userInfo) {
       this.isLoggedIn = true
       this.user = {
         id: userInfo.id,
         name: userInfo.name,
         surname: userInfo.surname
       }      
-    },    
-
+    },
+    
     logout() {
-    console.log(userId)
     deleteUser(userId)
       .then(() => {
-        // Remove the user data from local storage
-        localStorage.removeItem('userId');
-        localStorage.removeItem('userName');
-        localStorage.removeItem('userSurname');
-        // Set the isLoggedIn data property to false
+        localStorage.clear(); // Remove all data from local storage
         this.isLoggedIn = false;
         this.$router.push('/');
       })
@@ -75,24 +66,21 @@ export default {
         console.error(error);
       });
   },
-
-   startAudio() {
-  if (!this.isPlaying) {
-    // Create an AudioContext and play the audio
-    this.audioContext = new AudioContext();
-    this.$refs.audio.play().then(() => {
-      const track = this.audioContext.createMediaElementSource(this.$refs.audio);
-      track.connect(this.audioContext.destination);
-      this.isPlaying = true;
-    });
-  } else {
-    // Pause the audio and close the AudioContext
-    this.$refs.audio.pause();
-    this.audioContext.close();
-    this.isPlaying = false;
-  }
-}
-  }
-  }
-
+  
+    startAudio() {
+    if (!this.isPlaying) {
+      // Create an AudioContext and play the audio
+      this.audioContext = new AudioContext();
+      this.$refs.audio.play().then(() => {
+        const track = this.audioContext.createMediaElementSource(this.$refs.audio);
+        track.connect(this.audioContext.destination);
+       this.isPlaying = true;
+      });
+    } else {
+      // Pause the audio and close the AudioContext
+      this.$refs.audio.pause();
+      this.audioContext.close();
+      this.isPlaying = false;
+    }
+}}}
 </script>

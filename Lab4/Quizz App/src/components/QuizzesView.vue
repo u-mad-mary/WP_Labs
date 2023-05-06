@@ -1,13 +1,18 @@
-  <template>
+   <template>
     <div>
-      <h1>Quizzes</h1>
       <div v-if="loading">Loading quizzes...</div>
       <div v-else>
-        <ul>
-          <li v-for="quiz in quizzes" :key="quiz.id">
-            <router-link :to="'/quizzes/' + quiz.id">{{ quiz.title }}</router-link>
-          </li>
-        </ul>
+        <div class="quiz-box" v-for="quiz in quizzes" :key="quiz.id">
+          <router-link :to="'/quizzes/' + quiz.id" class="quiz-title-link">
+            <div class="quiz-title">{{ quiz.title }}</div>
+          </router-link>
+          <div v-if="quizResult(quiz.id)">
+            <p>You scored {{ quizResult(quiz.id).percentageCorrect }}% on this quiz.</p>
+          </div>
+          <div v-else>
+          <div>Play the quiz to score.</div>
+        </div>
+        </div>
       </div>
     </div>
   </template>
@@ -32,9 +37,22 @@
         }
       })
   
+      const quizResult = (quizId) => {
+        const result = JSON.parse(localStorage.getItem(`quizResult_${quizId}`))
+        if (result) {
+          return {
+            correctAnswers: result.correctAnswers,
+            totalQuestions: result.totalQuestions,
+            percentageCorrect: result.percentageCorrect
+          }
+        }
+        return null
+      }
+  
       return {
         quizzes,
         loading,
+        quizResult
       }
     },
   }
