@@ -1,35 +1,255 @@
-@import './base.css';
-
 #app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-
+  display: flex;
+  align-items: center;
+  color: black;
   font-weight: normal;
+  width: 80%;
+  margin-top: 5%;
+  margin-left: 5%;
 }
 
-a,
-.green {
+
+/*
+.container{
+  display: flex;
+  font-size: 2.5vh;
+  margin: 10%;
+  background-color: aqua;
+  width: 80vw;
+  height: 70vh;
+}
+
+.welcome{
+  font-size: 7vh;
+  margin-left: 20%;
+  margin-right: 20%;
+  width: 100%;
+}
+
+.nav-bar{
+  font-size: 5vh;
+  margin-top: -2vh;
+  margin-left: 50%;
+}
+
+.button{
+  font-size: 2.5vh;
+  padding: 5px 10px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.button:hover {
+  background-color: #3e8e41;
+}
+
+#music{
+  margin-left: 10%;
+}
+
+
+#register-view{
+  margin-top: 10%;
+  margin-left: 0;
+}
+.user-info {
+  position: absolute;
+  top: 0;
+  right: 10%;
+}
+
+#reg-button{
+  margin-top: 2vh;
+}
+
+#reg-name{
+  margin-right: 1vh;
+}
+
+#reg-surname{
+  margin-right: 1vh;
+}
+
+#home {
+  padding: 0 1vw;
+  min-height: 20vh;
+}
+
+#quizzes-page{
+  padding: 0 1vw;
+  padding-bottom: 2vh;
+}
+
+#register-view{
+  padding: 0 1vw;
+  padding-bottom: 2vh;
+}
+
+header nav {
+  display: flex;
+}
+
+header a {
   text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
+  font-weight: bold;
+  color: #079364;
+}
+
+header a:hover {
+  color: #00bd7e;
   transition: 0.4s;
+} */
+
+.user-info {
+  display: flex;
+  align-items: center;
+  background-color: #f2f2f2ca;
+  border: 0.2vh solid #b3c2bf;
+  padding: 1vh;
+  position: absolute;
+  right: 3vw;
+  top: 3vh;
+  border-radius: 0.3vh;
+  /* width: 20vw; */
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
+.user-info p {
+  color: #3c763d;
+  font-weight: bold;
+  font-size: 2.5vh;
+  margin: 0;
 }
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 0.7vw;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 2vh;
+  /* margin: 0.5vh 0.25vw; */
+  cursor: pointer;
+  border-radius: 0.3vh;
+}
 
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
+.user-info button{
+  margin-left: 1vw;
+}
+
+.container{
+  margin-left: 10%;
+  width: 100%;
+}
+
+.head{  
+  display: flex;
+  align-items: center;
+}
+
+.nav-bar {
+  display: flex;
+  margin-left: 30%;
+  margin-bottom: 2%;
+}
+
+.nav-bar a {
+  color: #333;
+  text-decoration: none;
+  margin-right: 2vh;
+  font-size: 3vh;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.nav-bar a:hover {
+  color: #4CAF50;
+}
+
+.container h1{
+  color: #023e02;
+  font-size: 8vh;
+  font-weight: bold;
+  margin: 0;
+  width: 100%;
+}
+
+#music {
+  width: 7vw;
+  border-radius: 0.3vh;
+}
+#register-view {
+  background-color: #f2f2f2ca;;
+  border: 0.2vh solid #b3c2bf;
+  padding: 3vw;
+  margin-bottom: 1vh;
+  border-radius: 0.3vh;
+}
+#register-view h1 {
+  color: #3c763d;
+  font-size: 4vh;
+  margin-top: 0;
+}
+#register-view label {
+  display: block;
+  font-size: 2.5vh;
+  margin-bottom: 0.25vh;
+}
+#register-view input {
+  padding: 1vh;
+  font-size: 2vh;
+  border-radius: 0.25vh;
+  border: none;
+  margin-bottom: 1vh;
+}
+#reg-button {
+  margin-top: 1vh;
+}
+.quiz {
+  background-color: #f2f2f2ca;;
+  border: 0.2vh solid #b3c2bf;
+  padding: 2vh;
+  margin-bottom: 1vh;
+}
+.quiz h1 {
+  color: #3c763d;
+  font-size: 4vh;
+  margin-top: 0;
+}
+.quiz h3 {
+  font-size: 2.5vh;
+  margin-top: 2vh;
+}
+.quiz p {
+  font-size: 1.5vh;
+  margin: 0;
+  margin-bottom: 1vh;
+}
+.quiz label {
+  display: block;
+  margin-bottom: 1vh;
+  font-size: 2vh;
+}
+.quiz input[type="radio"] {
+  margin-right: 1vw;
+}
+.quiz button[type="button"] {
+  margin-top: 1vh;
+}
+.quiz p:last-of-type {
+  margin-top: 1vh;
+}
+
+body {
+  display: flex;
+  place-items: center;
+  background-image: url('bgg.gif');
+  background-color: white;
+  background-size: cover;
+  /* background-repeat: no-repeat; */
+  font-family: 'Segoe UI', 'sans-serif';
 }

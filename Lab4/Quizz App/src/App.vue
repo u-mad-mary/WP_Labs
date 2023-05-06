@@ -1,85 +1,98 @@
-<script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
+  <div v-if="isLoggedIn" class="user-info">
+      <p>Logged in as <b>{{ user.name }} {{ user.surname }}.</b></p>
+      <button class="button" @click="logout">Log Out</button>
+  </div>
+  <div v-else class = "user-info">
+      <p>Please register to access the quizzes.</p>
+  </div>
+    <div class="container" id="start">
+      <audio ref="audio" loop>
+      <source src="@/assets/lofi.mp3" type="audio/mpeg">
+    </audio>
+    <header class="head">
+      <h1>Welcome to the Quiz App!</h1>
+      <button class="button" id="music" @click="startAudio">{{ isPlaying ? 'Music Off' : 'Music On' }}</button>
+    </header>
+    <nav class ="nav-bar">
+      <router-link to="/">Home</router-link>
+      <router-link v-if="isLoggedIn" to="/quizzes">Quizzes</router-link>
+      <router-link v-else to="/users">Register</router-link>
+    </nav>
+    <router-view @user-registered="updateUser"></router-view>
+  </div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
+<script>
+import { deleteUser } from './router/index';
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
+const userId = localStorage.getItem('userId')
 
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
+export default {
+  name: 'App',
+  data() {
+    return {
+      isLoggedIn: false,
+      user: {},
+      isPlaying: false,
+      audioContext: null
+    }
+  },
 
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
+  created(){
+    const userName = localStorage.getItem('userName');
+    const userSurname = localStorage.getItem('userSurname');
+    if (userId) {
+      this.isLoggedIn = true;
+      this.user.name = userName;
+      this.user.surname = userSurname;
+    }
+  },
 
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
+  methods: {
+     updateUser(userInfo) {
+      this.isLoggedIn = true
+      this.user = {
+        id: userInfo.id,
+        name: userInfo.name,
+        surname: userInfo.surname
+      }      
+    },    
 
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
+    logout() {
+    console.log(userId)
+    deleteUser(userId)
+      .then(() => {
+        // Remove the user data from local storage
+        localStorage.removeItem('userId');
+        localStorage.removeItem('userName');
+        localStorage.removeItem('userSurname');
+        // Set the isLoggedIn data property to false
+        this.isLoggedIn = false;
+        this.$router.push('/');
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  },
 
-nav a:first-of-type {
-  border: 0;
+   startAudio() {
+  if (!this.isPlaying) {
+    // Create an AudioContext and play the audio
+    this.audioContext = new AudioContext();
+    this.$refs.audio.play().then(() => {
+      const track = this.audioContext.createMediaElementSource(this.$refs.audio);
+      track.connect(this.audioContext.destination);
+      this.isPlaying = true;
+    });
+  } else {
+    // Pause the audio and close the AudioContext
+    this.$refs.audio.pause();
+    this.audioContext.close();
+    this.isPlaying = false;
+  }
 }
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
+  }
   }
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
-}
-</style>
+</script>
