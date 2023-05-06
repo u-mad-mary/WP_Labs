@@ -1,13 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../components/HomeView.vue'
-
+const ACCESS_TOKEN = 'b81364cf2fa55b6311ec1d3ae7234dee199de02986e0b90270aa89b8a79d4514'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: HomeView
+      name: 'home'
     },
     {
       path: '/quizzes',
@@ -39,7 +37,7 @@ async function makeApiCall(method, url, data = {}) {
     method: method,
     headers: {
       'Content-Type': 'application/json',
-      'X-Access-Token': 'b81364cf2fa55b6311ec1d3ae7234dee199de02986e0b90270aa89b8a79d4514'
+      'X-Access-Token': ACCESS_TOKEN  
     }
   };
   
