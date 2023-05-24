@@ -16,8 +16,7 @@ def save_news(chat_id, url):
     table_name = f"saved_news_{chat_id}"
     c.execute(f"CREATE TABLE IF NOT EXISTS {table_name} (id INTEGER PRIMARY KEY AUTOINCREMENT, url TEXT)")
 
-    # Get the last ID from the table
-    c.execute(f"SELECT id FROM {table_name} ORDER BY id DESC LIMIT 1")
+    c.execute(f"SELECT id FROM {table_name} ORDER BY id DESC LIMIT 1") # Get the last ID from the table
     last_id = c.fetchone()
     if last_id:
         new_id = last_id[0] + 1

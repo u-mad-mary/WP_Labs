@@ -5,9 +5,9 @@ from db import *
 import validators
 
 app = Flask(__name__)
-TOKEN = '6083687819:AAEFSiQEVaFfAu3PCJST6SACMw92ROb4x1Q'
-NEWSAPI_KEY = '7e7ed1c2b6d64e6f9359bd598c3bdeec'
-QUOTE_KEY = 'qDdx1WyyXiS7OdKNao26Ag==CzEYIZJ3SkfJFjQa'
+TOKEN = 'TOKEN'
+NEWSAPI_KEY = 'KEY'
+QUOTE_KEY = 'KEY'
 QUOTE_API_URL = 'https://api.api-ninjas.com/v1/quotes'
 
 @app.route('/', methods=['POST'])
