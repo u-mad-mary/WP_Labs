@@ -53,8 +53,7 @@ export default {
         name: userInfo.name,
         surname: userInfo.surname
       }      
-    },
-    
+    },    
     logout() {
     deleteUser(userId)
       .then(() => {
@@ -74,7 +73,7 @@ export default {
       this.$refs.audio.play().then(() => {
         const track = this.audioContext.createMediaElementSource(this.$refs.audio);
         track.connect(this.audioContext.destination);
-       this.isPlaying = true;
+        this.isPlaying = true;
       });
     } else {
       // Pause the audio and close the AudioContext
