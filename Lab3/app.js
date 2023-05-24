@@ -1,7 +1,6 @@
 "use strict";
 
 let tasks = [];
-let doneTasks = [];
 
 // Check if there are any tasks saved in local storage
 const savedTasks = localStorage.getItem('tasks');
@@ -121,11 +120,6 @@ function renderTasks(filteredTasks = tasks) {
 
 function toggleTaskDone(index) {
     tasks[index].done = !tasks[index].done;
-    renderTasks();
-}
-
-function deleteTask(index) {
-    tasks.splice(index, 1);
     renderTasks();
 }
 
